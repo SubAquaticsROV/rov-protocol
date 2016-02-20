@@ -1,10 +1,10 @@
-Commands
-========
-Motors
-======
+# Commands
+
+## Motors
+
 These are the commands that relate to the motors
 
-** `set_motor_pins` (0x10) **
+### `set_motor_pins` (0x10)
 
 This command tells the robot which pins are related to which motor
 
@@ -19,7 +19,7 @@ This command tells the robot which pins are related to which motor
 3	+----------+---------+
 ```
 
-** `control_motor` (0x11) **
+### `control_motor` (0x11)
 
 This command tells the robot to turn a motor left, right, or off.
 
@@ -32,7 +32,7 @@ This command tells the robot to turn a motor left, right, or off.
 2	+----------+---------+
 ```
 
-** `set_pwm_bounds` (0x12) **
+### `set_pwm_bounds` (0x12)
 
 This command tells the robot to limit the pwm values to a minimum
 and a maximum.
@@ -46,7 +46,7 @@ and a maximum.
 2	+----------+---------+
 ```
 
-** `set_safety_timeout` (0x13) **
+### `set_safety_timeout` (0x13)
 
 This command tells the robot how long it should wait before the
 values of and and b flip. It is supposed to prevent a short condition
@@ -61,11 +61,11 @@ that can occur.
 2	+----------+---------+
 ```
 
-Servos
-======
+## Servos
+
 The gripper needed a command to control it.
 
-** `set_gripper_pin` (0x20) **
+### `set_gripper_pin` (0x20)
 
 This tells the arduino which pin the servo is on.
 
@@ -76,7 +76,7 @@ This tells the arduino which pin the servo is on.
 1   +----------+---------+
 ```
 
-** `control_gripper` (0x21) **
+### `control_gripper` (0x21)
 
 This tells the arduino to set the servo to a certain pwm.
 Max: 150
@@ -89,11 +89,11 @@ Min: 36
 1   +----------+---------+
 ```
 
-Sensors
-=======
+## Sensors
+
 These commands will allow you to configure and turn on sensor feedback.
 
-** `set_sensor_pin`(0x30) **
+### `set_sensor_pin`(0x30)
 
 Configures the sensor pin.
 
@@ -106,7 +106,7 @@ Configures the sensor pin.
 2	+----------+---------+
 ```
 
-** `sensor_state` (0x31) **
+### `sensor_state` (0x31)
 
 Turns on the sensor and begins streaming it to the surface.
 
@@ -119,12 +119,12 @@ Turns on the sensor and begins streaming it to the surface.
 2	+----------+---------+
 ```
 
-Cameras
-=======
+## Cameras
+
 The cameras need their own commands! You use them to tell the ROV which pins
 the multiplexer is connected to, and which camera is supposed to be on.
 
-** `set_camera_pins` (0x40) **
+### `set_camera_pins` (0x40)
 
 This configures all of the multiplexer pins! The multiplexer requires the most
 pins, as well as the most bytes to configure.
@@ -142,7 +142,7 @@ pins, as well as the most bytes to configure.
 4   +----------+---------+
 ```
 
-** `switch_camera` (0x41) **
+### `switch_camera` (0x41)
 
 This tells the arduino to switch the camera.
 
@@ -153,11 +153,11 @@ This tells the arduino to switch the camera.
 1   +----------+---------+
 ```
 
-Misc
-====
+## Misc
+
 These commands don't really fit into any category. These are mostly for testing.
 
-** `echo` (0xF0) **
+### `echo` (0xF0)
 
 This command tells the arduino board to repeat the byte that follows to the computer.
 
