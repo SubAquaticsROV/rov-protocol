@@ -97,3 +97,30 @@ Payload
     |     Character N     |
 N   +----------+----------+
 ```
+
+## Sensor Responses
+
+After the initial differentation between sensors and logging, categories aren't
+very useful. After all, each measuring tool is very specific; many will share
+a similar interface, and some will be completely different.
+
+### `sensor_voltage` (0x20)
+
+The voltage sensor was the first kind of sensor to be stuck on the ROV. It reads
+the voltage from an analog pin, and then sends this information up to the top
+as a float.
+
+```
+Payload
+
+    0          4          8
+0   +----------+----------+
+    |                     |
+1   +                     +
+    |       Voltage       |
+2   +                     +
+    |       (Float)       |
+3   +                     +
+    |                     |
+4   +----------+----------+
+```
