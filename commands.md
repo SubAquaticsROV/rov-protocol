@@ -163,7 +163,8 @@ These commands don't really fit into any category. These are mostly for testing.
 
 ### `echo` (0xF0)
 
-This command tells the arduino board to repeat the byte that follows to the computer.
+This command tells the arduino board to repeat the byte that follows to the
+computer.
 
 ```
 	0          4         8
@@ -171,3 +172,10 @@ This command tells the arduino board to repeat the byte that follows to the comp
 	|        Data        |
 1	+----------+---------+
 ```
+
+
+### `version` (0xF1)
+
+Get the current version of the software running on the arduino.
+
+This command has no data associated with it.
