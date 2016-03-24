@@ -34,6 +34,8 @@ This command tells the robot to turn a motor left, right, or off.
 
 ### `set_pwm_bounds` (0x12)
 
+__Deprecated.__
+
 This command tells the robot to limit the pwm values to a minimum
 and a maximum.
 
@@ -47,6 +49,8 @@ and a maximum.
 ```
 
 ### `set_safety_timeout` (0x13)
+
+__Deprecated.__
 
 This command tells the robot how long it should wait before the
 values of and and b flip. It is supposed to prevent a short condition
@@ -106,7 +110,7 @@ Configures the sensor pin.
 2	+----------+---------+
 ```
 
-### `sensor_state` (0x31)
+### `set_sensor_state` (0x31)
 
 Turns on the sensor and begins streaming it to the surface.
 
