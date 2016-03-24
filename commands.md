@@ -65,31 +65,31 @@ that can occur.
 2	+----------+---------+
 ```
 
-## Servos
+## Stepper Motors
 
 The gripper needed a command to control it.
 
-### `set_gripper_pin` (0x20)
+### `set_stepper_pins` (0x20)
 
-This tells the arduino which pin the servo is on.
+This tells the arduino which pin the stepper motor is on.
 
 ```
     0          4         8
 0   +----------+---------+
-    |       PWM Pin      |
+    |    Direction Pin   |
 1   +----------+---------+
+    |      Step Pin      |
+2   +----------+---------+
 ```
 
-### `control_gripper` (0x21)
+### `control_stepper` (0x22)
 
-This tells the arduino to set the servo to a certain pwm.
-Max: 150
-Min: 36
+This tells the arduino to step the motor.
 
 ```
     0          4         8
 0   +----------+---------+
-    |         PWM        |
+    |Direction |   UNUSED|
 1   +----------+---------+
 ```
 
