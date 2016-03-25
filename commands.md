@@ -80,6 +80,8 @@ This tells the arduino which pin the stepper motor is on.
 1   +----------+---------+
     |      Step Pin      |
 2   +----------+---------+
+    |     Enable Pin     |
+3   +----------+---------+
 ```
 
 ### `control_stepper` (0x21)
@@ -90,6 +92,17 @@ This tells the arduino to step the motor.
     0          4         8
 0   +----------+---------+
     |Direction |   UNUSED|
+1   +----------+---------+
+```
+
+### `set_stepper_state` (0x22)
+
+This tells the arduino to set the mode of the enable pin.
+
+```
+    0          4         8
+0   +----------+---------+
+    |       Enable       |
 1   +----------+---------+
 ```
 
