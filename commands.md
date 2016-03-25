@@ -82,7 +82,7 @@ This tells the arduino which pin the stepper motor is on.
 2   +----------+---------+
 ```
 
-### `control_stepper` (0x22)
+### `control_stepper` (0x21)
 
 This tells the arduino to step the motor.
 
