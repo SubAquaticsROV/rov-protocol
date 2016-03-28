@@ -110,22 +110,15 @@ This tells the arduino to set the mode of the enable pin.
 
 These commands will allow you to configure and turn on sensor feedback.
 
-### `set_sensor_pin`(0x30)
-
-Configures the sensor pin.
-
-```
-	0          4         8
-0	+----------+---------+
-	|      Sensor ID     |
-1	+----------+---------+
-	|        Pins        |
-2	+----------+---------+
-```
-
-### `set_sensor_state` (0x31)
+### `set_sensor_state` (0x30)
 
 Turns on the sensor and begins streaming it to the surface.
+
+| ID |Sensor            |
+|----|------------------|
+|0x31|Voltage Sensor    |
+|0x32|Temperature Sensor|
+|0x33|Depth Sensor      |
 
 ```
 	0          4         8
@@ -135,6 +128,29 @@ Turns on the sensor and begins streaming it to the surface.
 	|        Mode        |
 2	+----------+---------+
 ```
+
+### `set_voltage_sensor_pin`(0x31)
+
+Configures the voltage sensor pin.
+
+```
+	0          4         8
+0	+----------+---------+
+	|         Pin        |
+1	+----------+---------+
+```
+
+### `set_temperature_sensor_pin`(0x32)
+
+Configures the temperature sensor pin.
+
+```
+	0          4         8
+0	+----------+---------+
+	|         Pin        |
+1	+----------+---------+
+```
+
 
 ## Cameras
 
