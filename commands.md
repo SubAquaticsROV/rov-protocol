@@ -151,7 +151,7 @@ Configures the temperature sensor pin.
 1	+----------+---------+
 ```
 
-### `set_depth_sensor_density`(0x32)
+### `set_depth_sensor_density`(0x33)
 
 Configures the density of the depth sensor, and it also initializes the sensor.
 This MUST be called before the depth sensor can be used.
