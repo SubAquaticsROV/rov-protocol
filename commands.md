@@ -151,6 +151,24 @@ Configures the temperature sensor pin.
 1	+----------+---------+
 ```
 
+### `set_depth_sensor_density`(0x32)
+
+Configures the density of the depth sensor, and it also initializes the sensor.
+This MUST be called before the depth sensor can be used.
+
+```
+	0          4         8
+0	+----------+---------+
+	|                    |
+1	+                    +
+	|    Density (int)   |
+2	+                    +
+	|                    |
+3	+                    +
+	|                    |
+4	+----------+---------+
+```
+
 
 ## Cameras
 
@@ -160,7 +178,8 @@ the multiplexer is connected to, and which camera is supposed to be on.
 ### `set_camera_pins` (0x40)
 
 This configures all of the multiplexer pins! The multiplexer requires the most
-pins, as well as the most bytes to configure.
+pins, as well as the most bytes to configure. And since a second multiplexer was
+added, this command is by far the longest.
 
 ```
     0          4         8
@@ -173,16 +192,25 @@ pins, as well as the most bytes to configure.
 3   +----------+---------+
     |        Pin 4       |
 4   +----------+---------+
+    |        Pin 5       |
+5   +----------+---------+
+    |        Pin 6       |
+6   +----------+---------+
+    |        Pin 7       |
+7   +----------+---------+
+    |        Pin 8       |
+8   +----------+---------+
 ```
 
 ### `switch_camera` (0x41)
 
-This tells the arduino to switch the camera.
+This tells the arduino to switch the camera. The fourth bit of the flags
+indicates which multiplexer to use.
 
 ```
     0          4         8
 0   +----------+---------+
-    |       Camera       |
+    |  Flags   | Camera  |
 1   +----------+---------+
 ```
 
