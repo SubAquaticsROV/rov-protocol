@@ -86,16 +86,14 @@ This tells the arduino which pin the stepper motor is on.
 
 ### `control_stepper` (0x21)
 
-This tells the arduino to step the motor. The DR field tells which direction the
-stepper is supposed to be going, and the amount tells how many times it should
-be turned. If the stepper has not been turned enough by the time that the next
-command is received, the number of turns left will be overwritten.
+The DR field tells which direction the stepper should turn, and the RN field
+tells if the stepper should be turning.
 
 ```
-    0  1       4         8
-0   +--+-------+---------+
-    |DR|     Amount      |
-1   +--+-------+---------+
+    0  1  2    4         8
+0   +--+--+----+---------+
+    |DR|RN|    Unused    |
+1   +--+--+----+---------+
 ```
 
 ### `set_stepper_state` (0x22)
